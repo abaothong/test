@@ -13,6 +13,14 @@
 		72114D0A23FC26DD007BF7BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72114D0823FC26DD007BF7BC /* Main.storyboard */; };
 		72114D0C23FC26E5007BF7BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72114D0B23FC26E5007BF7BC /* Assets.xcassets */; };
 		72114D0F23FC26E5007BF7BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72114D0D23FC26E5007BF7BC /* LaunchScreen.storyboard */; };
+		72BF6DC223FC28F7008338BC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF6DC123FC28F6008338BC /* User.swift */; };
+		72BF6DC423FC2AC0008338BC /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 72BF6DC323FC2AC0008338BC /* data.json */; };
+		72BF6DC623FC2C1C008338BC /* ViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF6DC523FC2C1C008338BC /* ViewControllerVM.swift */; };
+		72BF6DCA23FC3240008338BC /* HYTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF6DC823FC3240008338BC /* HYTableViewCell.swift */; };
+		72BF6DCB23FC3240008338BC /* HYTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72BF6DC923FC3240008338BC /* HYTableViewCell.xib */; };
+		72BF6DCD23FC333C008338BC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF6DCC23FC333C008338BC /* UIColor+Extension.swift */; };
+		72BF6DCF23FC33D7008338BC /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF6DCE23FC33D7008338BC /* ColorConstant.swift */; };
+		72BF6DD123FC350B008338BC /* HYTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF6DD023FC350B008338BC /* HYTableViewCellVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		72114D0B23FC26E5007BF7BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72114D0E23FC26E5007BF7BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72114D1023FC26E5007BF7BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72BF6DC123FC28F6008338BC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		72BF6DC323FC2AC0008338BC /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		72BF6DC523FC2C1C008338BC /* ViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVM.swift; sourceTree = "<group>"; };
+		72BF6DC823FC3240008338BC /* HYTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HYTableViewCell.swift; sourceTree = "<group>"; };
+		72BF6DC923FC3240008338BC /* HYTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HYTableViewCell.xib; sourceTree = "<group>"; };
+		72BF6DCC23FC333C008338BC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		72BF6DCE23FC33D7008338BC /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
+		72BF6DD023FC350B008338BC /* HYTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HYTableViewCellVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,63 @@
 		72114D0123FC26DD007BF7BC /* Boost */ = {
 			isa = PBXGroup;
 			children = (
-				72114D0223FC26DD007BF7BC /* AppDelegate.swift */,
-				72114D0423FC26DD007BF7BC /* SceneDelegate.swift */,
-				72114D0623FC26DD007BF7BC /* ViewController.swift */,
-				72114D0823FC26DD007BF7BC /* Main.storyboard */,
+				729BAE6A23FD74B700F3610E /* ViewController */,
+				729BAE6923FD74A400F3610E /* Settings */,
+				729BAE6823FD747F00F3610E /* Extension */,
+				729BAE6723FD746E00F3610E /* Constant */,
+				72BF6DC723FC3224008338BC /* TableViewCell */,
+				72BF6DC323FC2AC0008338BC /* data.json */,
 				72114D0B23FC26E5007BF7BC /* Assets.xcassets */,
-				72114D0D23FC26E5007BF7BC /* LaunchScreen.storyboard */,
-				72114D1023FC26E5007BF7BC /* Info.plist */,
 			);
 			path = Boost;
+			sourceTree = "<group>";
+		};
+		729BAE6723FD746E00F3610E /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				72BF6DCE23FC33D7008338BC /* ColorConstant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		729BAE6823FD747F00F3610E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				72BF6DCC23FC333C008338BC /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		729BAE6923FD74A400F3610E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				72114D0D23FC26E5007BF7BC /* LaunchScreen.storyboard */,
+				72114D0223FC26DD007BF7BC /* AppDelegate.swift */,
+				72114D0423FC26DD007BF7BC /* SceneDelegate.swift */,
+				72114D1023FC26E5007BF7BC /* Info.plist */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		729BAE6A23FD74B700F3610E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				72114D0623FC26DD007BF7BC /* ViewController.swift */,
+				72114D0823FC26DD007BF7BC /* Main.storyboard */,
+				72BF6DC123FC28F6008338BC /* User.swift */,
+				72BF6DC523FC2C1C008338BC /* ViewControllerVM.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		72BF6DC723FC3224008338BC /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				72BF6DC823FC3240008338BC /* HYTableViewCell.swift */,
+				72BF6DC923FC3240008338BC /* HYTableViewCell.xib */,
+				72BF6DD023FC350B008338BC /* HYTableViewCellVM.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +190,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				72114D0F23FC26E5007BF7BC /* LaunchScreen.storyboard in Resources */,
+				72BF6DCB23FC3240008338BC /* HYTableViewCell.xib in Resources */,
 				72114D0C23FC26E5007BF7BC /* Assets.xcassets in Resources */,
 				72114D0A23FC26DD007BF7BC /* Main.storyboard in Resources */,
+				72BF6DC423FC2AC0008338BC /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +204,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72BF6DD123FC350B008338BC /* HYTableViewCellVM.swift in Sources */,
+				72BF6DCD23FC333C008338BC /* UIColor+Extension.swift in Sources */,
+				72BF6DC223FC28F7008338BC /* User.swift in Sources */,
 				72114D0723FC26DD007BF7BC /* ViewController.swift in Sources */,
+				72BF6DC623FC2C1C008338BC /* ViewControllerVM.swift in Sources */,
 				72114D0323FC26DD007BF7BC /* AppDelegate.swift in Sources */,
 				72114D0523FC26DD007BF7BC /* SceneDelegate.swift in Sources */,
+				72BF6DCA23FC3240008338BC /* HYTableViewCell.swift in Sources */,
+				72BF6DCF23FC33D7008338BC /* ColorConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +358,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2HNASAFU2S;
-				INFOPLIST_FILE = Boost/Info.plist;
+				INFOPLIST_FILE = Boost/Settings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +376,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2HNASAFU2S;
-				INFOPLIST_FILE = Boost/Info.plist;
+				INFOPLIST_FILE = Boost/Settings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
