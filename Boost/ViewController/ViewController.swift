@@ -14,14 +14,20 @@ class ViewController: UIViewController {
     let refreshControl = UIRefreshControl()
     let loadingView = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
     
-    let vm = ViewControllerVM()
+    var vm: ViewControllerVM? = nil
+    var router: ViewControllerRouter? = nil
+    
     let cellIdentifier = "HYTableViewCell"
     
     var isPullToRefresh = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        vm.delegate = self
+
+        vm = ViewControllerVM()
+        vm?.delegate = self
+        router = ViewControllerRouter(vc: self)
+        
         initUI()
         initTableView()
         initData()
@@ -68,7 +74,7 @@ class ViewController: UIViewController {
     }
     
     func initData() {
-        vm.getJSON()
+        vm?.getJSON()
     }
     
     @objc func pullToRefresh() {
@@ -78,7 +84,7 @@ class ViewController: UIViewController {
     }
     
     @objc func addNewItem() {
-        
+        router?.navigateToForm(delegate: self)
     }
 }
 extension ViewController: ViewControllerVMDelegate {
@@ -105,13 +111,25 @@ extension ViewController: ViewControllerVMDelegate {
     }
 }
 
+extension ViewController: FormDataDelgate {
+    func createUser(user: User) {
+        //
+    }
+    
+    func updateUser(user: User, at index: Int) {
+        //
+    }
+}
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vm.users.count
+        return vm?.users.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let vm = vm else {
+            return UITableViewCell()
+        }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? HYTableViewCell ?? { () -> HYTableViewCell in
             return HYTableViewCell.init()

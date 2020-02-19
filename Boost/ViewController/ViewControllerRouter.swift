@@ -8,6 +8,24 @@
 
 import UIKit
 
-class ViewControllerRouter: NSObject {
+class ViewControllerRouter {
 
+    let mVC: ViewController
+    
+    init(vc: ViewController) {
+        mVC = vc
+    }
+    
+    func navigateToForm(delegate: FormDataDelgate) {
+        let storyboard = UIStoryboard(name: "Form", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "FormVC")
+        if let vc = controller as? FormVC {
+             vc.delegate = delegate
+             vc.vm = FormVCVM(type: .create)
+             
+             mVC.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
+    }
 }
