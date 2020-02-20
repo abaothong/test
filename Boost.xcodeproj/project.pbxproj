@@ -82,6 +82,7 @@
 		72114D0123FC26DD007BF7BC /* Boost */ = {
 			isa = PBXGroup;
 			children = (
+				72BF6DC123FC28F6008338BC /* User.swift */,
 				729BAE6E23FD873700F3610E /* Form */,
 				729BAE6A23FD74B700F3610E /* ViewController */,
 				729BAE6923FD74A400F3610E /* Settings */,
@@ -125,7 +126,6 @@
 		729BAE6A23FD74B700F3610E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				72BF6DC123FC28F6008338BC /* User.swift */,
 				72114D0623FC26DD007BF7BC /* ViewController.swift */,
 				72114D0823FC26DD007BF7BC /* Main.storyboard */,
 				72BF6DC523FC2C1C008338BC /* ViewControllerVM.swift */,
