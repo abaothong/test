@@ -39,17 +39,22 @@ class FormVC: UITableViewController {
     }
     
     func initUI() {
-        
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+               
+        let rightBtn = UIBarButtonItem(
             barButtonSystemItem: .save,
             target: self,
             action: #selector(save)
         )
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+        rightBtn.tintColor = ColorConstant.themeColor
+        self.navigationItem.rightBarButtonItem = rightBtn
+        
+        let leftButton = UIBarButtonItem(
             barButtonSystemItem: .cancel,
             target: self,
             action: #selector(cancel)
         )
+        leftButton.tintColor = ColorConstant.themeColor
+        self.navigationItem.leftBarButtonItem = leftButton
         
         avatarView.backgroundColor = ColorConstant.themeColor
         avatarView.layer.cornerRadius = avatarView.frame.size.width / 2
