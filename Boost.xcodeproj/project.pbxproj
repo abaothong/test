@@ -13,8 +13,9 @@
 		72114D0A23FC26DD007BF7BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72114D0823FC26DD007BF7BC /* Main.storyboard */; };
 		72114D0C23FC26E5007BF7BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72114D0B23FC26E5007BF7BC /* Assets.xcassets */; };
 		72114D0F23FC26E5007BF7BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72114D0D23FC26E5007BF7BC /* LaunchScreen.storyboard */; };
+		727EC7BD23FEB2AF00D411AE /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EC7BC23FEB2AF00D411AE /* LoadingManager.swift */; };
+		727EC7BF23FEB53E00D411AE /* FormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727EC7BE23FEB53E00D411AE /* FormVC.swift */; };
 		729BAE6D23FD851E00F3610E /* ViewControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BAE6C23FD851E00F3610E /* ViewControllerRouter.swift */; };
-		729BAE7023FD875100F3610E /* FormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BAE6F23FD875100F3610E /* FormVC.swift */; };
 		729BAE7223FD876100F3610E /* Form.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 729BAE7123FD876100F3610E /* Form.storyboard */; };
 		729BAE7423FD894100F3610E /* FormVCVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729BAE7323FD894100F3610E /* FormVCVM.swift */; };
 		72BF6DC223FC28F7008338BC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF6DC123FC28F6008338BC /* User.swift */; };
@@ -36,8 +37,9 @@
 		72114D0B23FC26E5007BF7BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72114D0E23FC26E5007BF7BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72114D1023FC26E5007BF7BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		727EC7BC23FEB2AF00D411AE /* LoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingManager.swift; sourceTree = "<group>"; };
+		727EC7BE23FEB53E00D411AE /* FormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVC.swift; sourceTree = "<group>"; };
 		729BAE6C23FD851E00F3610E /* ViewControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRouter.swift; sourceTree = "<group>"; };
-		729BAE6F23FD875100F3610E /* FormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVC.swift; sourceTree = "<group>"; };
 		729BAE7123FD876100F3610E /* Form.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Form.storyboard; sourceTree = "<group>"; };
 		729BAE7323FD894100F3610E /* FormVCVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVCVM.swift; sourceTree = "<group>"; };
 		72BF6DC123FC28F6008338BC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				72BF6DC723FC3224008338BC /* TableViewCell */,
 				72BF6DC323FC2AC0008338BC /* data.json */,
 				72114D0B23FC26E5007BF7BC /* Assets.xcassets */,
+				727EC7BC23FEB2AF00D411AE /* LoadingManager.swift */,
 			);
 			path = Boost;
 			sourceTree = "<group>";
@@ -122,9 +125,9 @@
 		729BAE6A23FD74B700F3610E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				72BF6DC123FC28F6008338BC /* User.swift */,
 				72114D0623FC26DD007BF7BC /* ViewController.swift */,
 				72114D0823FC26DD007BF7BC /* Main.storyboard */,
-				72BF6DC123FC28F6008338BC /* User.swift */,
 				72BF6DC523FC2C1C008338BC /* ViewControllerVM.swift */,
 				729BAE6C23FD851E00F3610E /* ViewControllerRouter.swift */,
 			);
@@ -134,9 +137,9 @@
 		729BAE6E23FD873700F3610E /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				729BAE6F23FD875100F3610E /* FormVC.swift */,
 				729BAE7123FD876100F3610E /* Form.storyboard */,
 				729BAE7323FD894100F3610E /* FormVCVM.swift */,
+				727EC7BE23FEB53E00D411AE /* FormVC.swift */,
 			);
 			path = Form;
 			sourceTree = "<group>";
@@ -230,11 +233,12 @@
 				729BAE6D23FD851E00F3610E /* ViewControllerRouter.swift in Sources */,
 				72BF6DCD23FC333C008338BC /* UIColor+Extension.swift in Sources */,
 				72BF6DC223FC28F7008338BC /* User.swift in Sources */,
+				727EC7BD23FEB2AF00D411AE /* LoadingManager.swift in Sources */,
+				727EC7BF23FEB53E00D411AE /* FormVC.swift in Sources */,
 				72114D0723FC26DD007BF7BC /* ViewController.swift in Sources */,
 				72BF6DC623FC2C1C008338BC /* ViewControllerVM.swift in Sources */,
 				72114D0323FC26DD007BF7BC /* AppDelegate.swift in Sources */,
 				72114D0523FC26DD007BF7BC /* SceneDelegate.swift in Sources */,
-				729BAE7023FD875100F3610E /* FormVC.swift in Sources */,
 				72BF6DCA23FC3240008338BC /* HYTableViewCell.swift in Sources */,
 				72BF6DCF23FC33D7008338BC /* ColorConstant.swift in Sources */,
 			);
@@ -389,7 +393,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.abao.Boost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -407,7 +411,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.abao.Boost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

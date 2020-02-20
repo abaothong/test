@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let refreshControl = UIRefreshControl()
-    let loadingView = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
     
     var vm: ViewControllerVM? = nil
     var router: ViewControllerRouter? = nil
@@ -23,7 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         vm = ViewControllerVM()
         vm?.delegate = self
         router = ViewControllerRouter(vc: self)
@@ -31,6 +30,16 @@ class ViewController: UIViewController {
         initUI()
         initTableView()
         initData()
+    }
+        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        initData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        LoadingManager.shared.hide()
     }
     
     func initUI() {
@@ -42,35 +51,19 @@ class ViewController: UIViewController {
         )
         rightBtn.tintColor = ColorConstant.themeColor
         self.navigationItem.rightBarButtonItem = rightBtn
-        initLoadingView()
     }
     func initTableView() {
         tableView.register(UINib(nibName: "HYTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 50
         tableView.dataSource = self
+        tableView.delegate = self
         initRefreshController()
     }
     
     func initRefreshController() {
         refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         tableView.refreshControl = refreshControl
-    }
-    
-    func initLoadingView() {
-        let loadingIndicator = UIActivityIndicatorView(
-            frame: CGRect(
-                x: 10,
-                y: 5,
-                width: 50,
-                height: 50
-            )
-        )
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = .medium
-        loadingIndicator.startAnimating();
-
-        loadingView.view.addSubview(loadingIndicator)
     }
     
     func initData() {
@@ -84,18 +77,19 @@ class ViewController: UIViewController {
     }
     
     @objc func addNewItem() {
-        router?.navigateToForm(delegate: self)
+        router?.navigateToForm(
+            delegate: self,
+            type: .create
+        )
     }
 }
 extension ViewController: ViewControllerVMDelegate {
     func beginLoading() {
-        present(loadingView, animated: true, completion: nil)
+        LoadingManager.shared.show(vc: self)
     }
     
     func endLoading() {
-        if loadingView.isBeingPresented {
-            loadingView.dismiss(animated: true, completion: nil)
-        }
+        LoadingManager.shared.hide()
         
         if isPullToRefresh {
             isPullToRefresh = false
@@ -120,6 +114,7 @@ extension ViewController: FormDataDelgate {
         //
     }
 }
+
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -144,7 +139,15 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        if let user = vm?.users[indexPath.row] {
+            router?.navigateToForm(
+                delegate: self,
+                type: .edit(
+                    user: user,
+                    index: indexPath.row
+                )
+            )
+        }
     }
 }
 
