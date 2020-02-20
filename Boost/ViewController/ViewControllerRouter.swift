@@ -16,16 +16,15 @@ class ViewControllerRouter {
         mVC = vc
     }
     
-    func navigateToForm(delegate: FormDataDelgate) {
+    func navigateToForm(delegate: FormDataDelgate,
+                        type: FormType) {
         let storyboard = UIStoryboard(name: "Form", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "FormVC")
         if let vc = controller as? FormVC {
              vc.delegate = delegate
-             vc.vm = FormVCVM(type: .create)
+             vc.vm = FormVCVM(type: type)
              
              mVC.navigationController?.pushViewController(vc, animated: true)
         }
-        
-        
     }
 }
